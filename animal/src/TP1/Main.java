@@ -27,6 +27,6 @@ public class Main {
         System.out.println("Couleur des yeux: " + cow.getEyeColor()); // I can access because it's protected and in the same package
         System.out.println("Couleur du pelage: " + cow.getFurColor()); // I can access because it's public
 
-
+        dog.play("dog");
     }
 }
