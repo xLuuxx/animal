@@ -1,5 +1,7 @@
 package TP1;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Owner owner = new Owner("John"); // Create an owner
@@ -47,6 +49,19 @@ public class Main {
 
         Pet pet3 = new Cow("Bessie", 5);
         pet3.play("Bessie");
+
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(new Dog("Rex", 3));
+        animals.add(new Dog("Max", 5));
+        animals.add(new Cow("Marguerite", 4));
+        animals.add(new Cow("Blanchette", 2));
+
+        for (Animal animal : animals) {
+            System.out.println(animal.name + " (" + animal.age + " ans)");
+            animal.makeSound();
+            ((Pet) animal).play(animal.name);
+            System.out.println();
+        }
 
 
         cat.hunt();
