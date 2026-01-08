@@ -9,7 +9,11 @@ public class Animal {
         this.age = age;
     }
 
-    void makeSound() {
+    public void makeSound() {
         System.out.println("animal sounds");
+    }
+
+    public static void commonRule() {
+        System.out.println("The animal needs to eat in order to survive");
     }
 }

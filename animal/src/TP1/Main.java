@@ -5,5 +5,6 @@ public class Main {
         Cow cow= new Cow("Vachette", 2);
         System.out.println(cow.name);
         cow.makeSound();
+        Animal.commonRule();
     }
 }
