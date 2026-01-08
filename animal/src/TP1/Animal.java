@@ -1,6 +1,6 @@
 package TP1;
 
-public class Animal implements Pet {
+public class Animal  {
     String name;
     int age;
     private int LegNumber;
@@ -57,10 +57,5 @@ public class Animal implements Pet {
 
     void run(String animal) {
         System.out.println("The " + animal + " is running");
-    }
-
-    @Override
-    public void play(String animal) {
-        System.out.println("The " + animal + " is playing");
     }
 }

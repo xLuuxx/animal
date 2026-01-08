@@ -1,5 +1,7 @@
 package TP1;
 
+import java.util.ArrayList;
+
 public class Main {
     static void main(String[] args) {
         Cow cow= new Cow("Vachette", 2);
@@ -14,6 +16,10 @@ public class Main {
         dog.eat("os");
         dog.drink("water", "dog");
 
+        Cat cat = new Cat("Inari", 1);
+        System.out.println(cat.name);
+        cat.makeSound();
+
         //System.out.println(dog.LegNumber); can't access because it's private
         //dog.sleep(); // can't access because it's private
         dog.walk("dog"); // I can access because it's protected and in the same package
@@ -27,6 +33,18 @@ public class Main {
         System.out.println("Couleur des yeux: " + cow.getEyeColor()); // I can access because it's protected and in the same package
         System.out.println("Couleur du pelage: " + cow.getFurColor()); // I can access because it's public
 
-        dog.play("dog");
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(dog);
+        animals.add(cow);
+        animals.add(cat);
+
+        Pet pet1 = new Dog("Buddy", 4);
+        pet1.play("Buddy");
+
+        Pet pet2 = new Cat("Inari", 2);
+        pet2.play("Inari");
+
+        Pet pet3 = new Cow("Bessie", 5);
+        pet3.play("Bessie");
     }
 }
