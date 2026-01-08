@@ -6,6 +6,11 @@ public class Dog extends Animal implements Pet {
     }
 
     @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+
+    @Override
     public void eat() {
         System.out.println("Munch Munch the dog foodie");
     }

@@ -1,31 +1,36 @@
 package TP1;
 
-import java.util.ArrayList;
-
 public class Main {
-    static void main(String[] args) {
-        Cow cow= new Cow("Vachette", 2);
-        System.out.println(cow.name);
-        cow.makeSound();
-        Animal.commonRule();
-        cow.eat();
+    public static void main(String[] args) {
+        Owner owner = new Owner("John"); // Create an owner
 
-        Dog dog = new Dog("Hercule", 3);
-        System.out.println(dog.name);
-        dog.eat();
-        dog.eat("os");
-        dog.drink("water", "dog");
+        Cow cow = new Cow("Vachette", 2); // Create a cow
+        owner.addAnimal(cow); // Add the cow to the owner's list
+        System.out.println(cow.name); // Access cow name
+        cow.makeSound(); // Cow sound
+        cow.eat(); // Cow eating
 
-        Cat cat = new Cat("Inari", 1);
-        System.out.println(cat.name);
-        cat.makeSound();
+        Animal.commonRule(); // Common rule for all animals
+
+        Dog dog = new Dog("Hercule", 3); // Create a dog
+        owner.addAnimal(dog); // Add the dog to the owner's list
+        System.out.println(dog.name); // Access dog name
+        dog.eat(); // Dog eating
+        dog.eat("os"); // Dog eating specific food
+        dog.drink("water"); // Dog drinking
+
+        Cat cat = new Cat("Inari", 1); // Create a cat
+        owner.addAnimal(cat); // Add the cat to the owner's list
+        System.out.println(cat.name); // Access cat name
+        cat.makeSound(); // Cat sound
+
 
         //System.out.println(dog.LegNumber); can't access because it's private
         //dog.sleep(); // can't access because it's private
-        dog.walk("dog"); // I can access because it's protected and in the same package
-        dog.run("dog"); // I can access because it's default and in the same package
-        cow.walk("cow"); // I can access because it's protected and in the same package
-        cow.run("cow"); // I can access because it's default and in the same package
+        dog.walk(); // I can access because it's protected and in the same package
+        dog.run(); // I can access because it's default and in the same package
+        cow.walk(); // I can access because it's protected and in the same package
+        cow.run(); // I can access because it's default and in the same package
 
         System.out.println("Couleur des yeux: " + dog.getEyeColor()); // I can access because it's protected and in the same package
         System.out.println("Couleur du pelage: " + dog.getFurColor()); // I can access because it's public
@@ -33,10 +38,6 @@ public class Main {
         System.out.println("Couleur des yeux: " + cow.getEyeColor()); // I can access because it's protected and in the same package
         System.out.println("Couleur du pelage: " + cow.getFurColor()); // I can access because it's public
 
-        ArrayList<Animal> animals = new ArrayList<>();
-        animals.add(dog);
-        animals.add(cow);
-        animals.add(cat);
 
         Pet pet1 = new Dog("Buddy", 4);
         pet1.play("Buddy");
@@ -46,5 +47,9 @@ public class Main {
 
         Pet pet3 = new Cow("Bessie", 5);
         pet3.play("Bessie");
+
+
+        cat.hunt();
+        // Animal animal = new Animal("Test", 5, "Blue", "Red", 4); trying to instantiate an abstract class, but I can't
     }
 }

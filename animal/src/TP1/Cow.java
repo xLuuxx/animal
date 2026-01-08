@@ -1,6 +1,6 @@
 package TP1;
 
-class Cow extends Animal implements Pet {
+public class Cow extends Animal implements Pet {
     public Cow(String name, int age) {
         super(name, age, "Black", "White&Black", 4);
     }
